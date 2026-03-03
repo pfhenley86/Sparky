@@ -25,13 +25,15 @@ namespace Sparky
         }
 
         [Test]
-        public void IsOddChecker_InputEvenNumber_ReturnFalse()
+        [TestCase(10)]
+        [TestCase(22)]
+        public void IsOddChecker_InputEvenNumber_ReturnFalse(int a)
         {
             //Arrange
             Calculator calc = new ();
 
             //Act
-            bool isOdd = calc.IsOddNumber(10);
+            bool isOdd = calc.IsOddNumber(a);
 
             //Assert
             ClassicAssert.That(isOdd,Is.EqualTo(false));
@@ -39,13 +41,15 @@ namespace Sparky
         }
 
         [Test]
-        public void IsOddChecker_InputOddNumber_ReturnTrue()
+        [TestCase(11)]
+        [TestCase(13)]
+        public void IsOddChecker_InputOddNumber_ReturnTrue(int a)
         {
             //Arrange
             Calculator calc = new();
 
             //Act
-            bool isOdd = calc.IsOddNumber(11);
+            bool isOdd = calc.IsOddNumber(a);
 
             //Assert
             ClassicAssert.That(isOdd, Is.EqualTo(true));
