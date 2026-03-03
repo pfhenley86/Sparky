@@ -55,5 +55,19 @@ namespace Sparky
             ClassicAssert.That(isOdd, Is.EqualTo(true));
             ClassicAssert.IsTrue(isOdd);
         }
+
+        [Test]
+        [TestCase(10, ExpectedResult = false)]
+        [TestCase(11, ExpectedResult = false)]
+        [TestCase(20, ExpectedResult = false)]
+
+        public bool IsOddChecker_InputNumber_ReturnTrueIfOdd(int a)
+        {
+            //Arrange
+            Calculator calc = new();
+
+            //Act && Assert
+            return calc.IsOddNumber(a);
+        }
     }
 }
