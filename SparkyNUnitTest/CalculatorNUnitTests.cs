@@ -87,6 +87,19 @@ namespace Sparky
             //15.7-16.1
         }
 
+        [Test]
+        public void OddRanger_InputMinAndMaxRange_ValidOddNumberRange()
+        {
+            // Arrange
+            Calculator calc = new();
+            List<int> expectedOddRange = new() { 5, 7, 9 }; //5-10
+
+            // Act
+            List<int> result = calc.GetOddRange(3, 10);
+
+            // Assert
+            Assert.That(result, Is.EquivalentTo(expectedOddRange));
+        }
 
     }
 }
